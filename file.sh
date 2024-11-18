@@ -1,6 +1,6 @@
 !#/bin/bash
 
-git clone   .. app
+git clone https://github.com/JRodrigoHC19/api-recommendation-25million.git app
 cd app
 
 cd postgres
