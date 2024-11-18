@@ -1,0 +1,34 @@
+services:
+# FAST-API
+  fast-api:
+    container_name: srv-api
+    build:
+      context: ./api-service
+    depends_on:
+      - db-postgres
+    ports:
+      - "8000:8000"
+    networks:
+      - back-tier
+
+# POSTGRES
+  db-postgres:
+    container_name: db-postgres
+    build:
+      context: ./postgres
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=test
+    ports:
+      - "5432:5432"
+    volumes:
+      - "db-data:/var/lib/postgresql/data"
+    networks:
+      - back-tier
+
+networks:
+  back-tier:
+
+volumes:
+  db-data:
