@@ -3,7 +3,9 @@
 ## Step 1
 -- Solo Bajate este script y no el repositorio completo
 -- Ejecuta del script sh
+
 sh file.sh
+
 
 ## Step 2
 -- Entra al directorio del repositorio que haz bajado
